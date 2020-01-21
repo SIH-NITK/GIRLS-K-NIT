@@ -17,6 +17,7 @@ resize_factor = 0.60
 def preprocessing():
     preprocessed = []
     for i in range(len(images)):
+        temp = images[i][:, :, 0]
         temp = noise.denoise(images[i], noise_kernel_size)
         temp = blur.blur(temp, blur_kernel_size)
         temp = normalize.normalize(temp)
