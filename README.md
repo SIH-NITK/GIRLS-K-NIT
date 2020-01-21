@@ -3,6 +3,7 @@ SIH 2020 Internal Hackathon
 
 ## Runing the App
 ```bash
+$ cd PlotPref
 $ pipenv install flask flask-sqlalchemy
 $ pipenv shell
 $ cd ..
