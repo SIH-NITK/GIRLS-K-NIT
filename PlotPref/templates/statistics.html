@@ -14,6 +14,33 @@
             <h2>
                 Statistics of the Plot
             </h2>
+            <hr>
+            <p>
+                Number of Harvests : {{ num_harvests }}
+                <br>
+                Maturity Month : {{ maturity }}
+                <br>
+                Harvest Month : {{ harvest }}
+                <br>
+                Crop Cycle Duration: {{ crop_cycle }} Months
+                <br>
+                Crop Type : {{ crop_type }}
+            </p>
+            <hr>
+            <div>
+                <h3>Vegetation Cover</h3>
+                <img src="../static/img/pieplot.png" id="graph1">
+            </div>
+            <br>
+            <hr>
+            <br>
+            <div>
+                <h3>Change in Density of Vegetation with Time</h3>
+                <img src="../static/img/plot2.png" id="graph2">
+                <p>
+                    The graph shows how the Vegetation cover in the given location changes over a period of 2 years. 
+                </p>
+            </div>
         </div>
     </div> <!-- /container -->
 </center>

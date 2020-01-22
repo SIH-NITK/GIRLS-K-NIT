@@ -14,6 +14,38 @@
             <h2>
                 Plot Cultivability
             </h2>
+            <hr>
+            <br>
+            <h3>Collected Data on NVDI:</h3>
+            <p>
+                Standard Deviation : {{ std }}
+                <br>
+                Minimum : {{ min }}
+                <br>
+                Maximum : {{ max }}
+                <br>
+                Median : {{ median }}
+                <br>
+                Mean : {{ mean }}
+            </p>
+            <hr>
+            <h3>
+                Analysis
+            </h3>
+            {% if cult == True %}
+            <p>
+                Land is cultivable! :)
+            </p>
+            {% else %}
+            <p>
+                Land is not cultivable! :()
+            </p>
+            {% endif %}
+            <p>
+                Minimum yield on the selected plot = {{ min }}
+                <br>
+                Maximum yield on the selected plot = {{ max }}
+            </p>
         </div>
     </div> <!-- /container -->
 </center>

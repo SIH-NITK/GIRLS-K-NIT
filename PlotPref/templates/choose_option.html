@@ -17,8 +17,9 @@
                     <button class="btn btn-lg btn-primary btn-block" type="submit">Statistics</button>
                 </div>
             </form>
-            <form class="form-signin" method="GET" action="{{ url_for('main.cultivability') }}">
+            <form class="form-signin" method="GET" action="{{ url_for('main.cultivability', polygon_id=polygon_id)  }}">
                 <div class="form-group">
+                    <!-- <p>Here is my variable: {{ polygon_id }}</p> -->
                     <button class="btn btn-lg btn-primary btn-block" type="submit">Culitivability</button>
                 </div>
             </form>
