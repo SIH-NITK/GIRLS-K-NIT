@@ -8,23 +8,24 @@ def find_harvest():
 	num_images = imgs.shape[0]
 	dim_x = imgs.shape[1]
 	dim_y = imgs.shape[2]
-
+	print(num_images, dim_x, dim_y)
 	diff = np.zeros((num_images-1,dim_x,dim_y))
-
+	plt.imshow(imgs[7], cmap="gray")
+	plt.show()
 	j=0
-	for i in range(0, num_images-2 ,2):
-	    diff[j] = ( imgs[i]) - (imgs[i+2])
+	for i in range(0, num_images-1 ,1):
+	    diff[j] = (( imgs[i+1]) - (imgs[i]))
 	    j+=1
 	   
 	x = []
 	y = []
-	threshold = 70
+	threshold = 150
 	count = 0
-	for k in range(0,24,1):
+	for k in range(0,23,1):
 	    count = 0
 	    for i in range(dim_x):
 	        for j in range(dim_y):
-	            if diff[k][i][j] > 70:
+	            if diff[k][i][j] > threshold:
 	                count+=1
 	    y.append(count)
 	    x.append(k)
