@@ -1,0 +1,42 @@
+{% extends 'base.html' %}
+
+{% block title %}Choose Location{% endblock %}
+
+{% block css %}
+<!-- Custom styles for this template -->
+<link href="{{ url_for('static', filename='css/location.css') }}" rel="stylesheet">
+<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCdSq0lipFrG-4ewfzDzw4ax5u7kGIY054&callback=initMap"
+    async defer></script>
+{% endblock %}
+
+{% block body %}
+<center>
+    <div class="container theme-showcase">
+        <div class="jumbotron">
+            <h1>Select a location!</h1>
+            <p>Click on a location on the map to select it. Drag the marker to change location.</p>
+    
+            <div id="map" style="width: 500px;"></div>
+    
+            <h2>Chosen Location</h2>
+            <!-- <form method="post">
+                <input type="text" id="lat" readonly="yes"><br>
+                <input type="text" id="lng" readonly="yes">
+
+            </form> -->
+            <form  method="POST" action="{{ url_for('main.location') }}">
+                <div class="form-group">
+                    <label for="Latitude">Latitude</label>
+                    <input type="text" id="lat" name="Latitude" readonly="yes">
+                </div>
+                <div class="form-group">
+                    <label for="Longitude" >Longitude</label>
+                    <input type="text" name="Longitude" id="lng" readonly="yes"></input>
+                </div>
+                <button class="btn btn-lg btn-primary btn-block" type="submit">Submit</button>
+            </form>
+            <script type="text/javascript" src="../static/script/map.js"></script>
+        </div>
+    </div>
+</center>
+{% endblock %}

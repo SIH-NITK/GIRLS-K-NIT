@@ -1,1 +1,25 @@
-<h1>Hello World</h1>
+{% extends 'base.html' %}
+
+{% block title %}PlotPref{% endblock %}
+
+{% block css %}
+<!-- Bootstrap theme -->
+<link href="{{ url_for('static', filename='css/bootstrap-theme.min.css') }}" rel="stylesheet">
+
+<!-- Custom styles for this template -->
+<link href="{{ url_for('static', filename='css/theme.css') }}" rel="stylesheet">
+{% endblock %}
+
+{% block body %}
+<div class="container theme-showcase" role="main">
+
+    <div class="jumbotron">
+        <h1>PlotPref</h1>
+        <p> 
+            PlotPref is a Web Application which can be used by farmers to pick suitable plots of land to buy.
+        </p>
+        <a type="button" class="btn btn-link" href="{{ url_for('main.login') }}">Login to use PlotPref!</a>
+    </div>
+
+</div> <!-- /container -->
+{% endblock %}
