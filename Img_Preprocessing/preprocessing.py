@@ -25,8 +25,8 @@ def preprocessing():
         height, width, channels = temp.shape
         temp = resize.resize(temp,int(height*resize_factor), int(width*resize_factor))
         #cv2.imshow("Preprocessed", temp)
-        preprocessed.append(temp)
+        preprocessed.append(temp[:, :, 0])
     preprocessed_array = np.array(preprocessed)
-    print("Preprocessing done!", len(preprocessed), print(type(preprocessed_array)))
+    print("Preprocessing done!", len(preprocessed)))
     return preprocessed_array
 
