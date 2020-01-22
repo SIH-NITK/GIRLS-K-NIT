@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+
+{% block title %}Choose an Action{% endblock %}
+
+{% block css %}
+<!-- Custom styles for this template -->
+<link href="{{ url_for('static', filename='css/choose_option.css') }}" rel="stylesheet">
+{% endblock %}
+
+{% block body %}
+<center>
+    <div class="container theme-showcase" style="margin-top: 70px;">
+        <div class="jumbotron">
+            <h2>Choose an Action</h2>
+            <form class="form-signin" method="GET" action="{{ url_for('main.statistics') }}">
+                <div class="form-group">
+                    <button class="btn btn-lg btn-primary btn-block" type="submit">Statistics</button>
+                </div>
+            </form>
+            <form class="form-signin" method="GET" action="{{ url_for('main.cultivability') }}">
+                <div class="form-group">
+                    <button class="btn btn-lg btn-primary btn-block" type="submit">Culitivability</button>
+                </div>
+            </form>
+            <form class="form-signin" method="GET" action="{{ url_for('main.current_status') }}">
+                <div class="form-group">
+                    <button class="btn btn-lg btn-primary btn-block" type="submit">Current Status</button>
+                </div>
+            </form>
+        </div>
+    </div> <!-- /container -->
+</center>
+{% endblock %}
