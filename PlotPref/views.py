@@ -28,4 +28,20 @@ def location_post():
     print(lat)
     print(lon)
 
-    return "Hello"
+    return redirect(url_for('main.choose_option'))
+
+@main.route('/choose_option')
+def choose_option():
+    return render_template('choose_option.html')
+
+@main.route('/statistics')
+def statistics():
+    return render_template('statistics.html')
+
+@main.route('/cultivability')
+def cultivability():
+    return render_template('cultivability.html')
+
+@main.route('/current_status')
+def current_status():
+    return render_template('current_status.html')
