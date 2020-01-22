@@ -66,11 +66,11 @@ def cultivability():
     print(r)
     stats = get_ndvi_data(r)
     stats_data = requests.get(stats).json()
-    std = stats_data['std']
-    min = stats_data['min']
-    max = stats_data['max']
-    mean = stats_data['mean']
-    median = stats_data['median']
+    std = round(stats_data['std'], 2)
+    min = round(stats_data['min'], 2)
+    max = round(stats_data['max'], 2)
+    mean = round(stats_data['mean'], 2)
+    median = round(stats_data['median'], 2)
     cult = False
     if mean > 0.5:
         cult = True
